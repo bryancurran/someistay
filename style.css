@@ -1,0 +1,276 @@
+/* Somei Stay — v1. Plain CSS, no build step. Mobile-first. */
+
+:root {
+  --ink: #22281f;
+  --ink-soft: #4c5347;
+  --paper: #faf9f5;
+  --paper-alt: #f1efe7;
+  --accent: #2e4636;      /* deep pine green */
+  --accent-dark: #22362a;
+  --rule: #ddd9cc;
+  --max: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.wordmark span { color: var(--accent); }
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.topbar nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.topbar nav a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+.topbar nav a.nav-cta {
+  color: #fff;
+  background: var(--accent);
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+}
+
+.topbar nav a.nav-cta:hover { background: var(--accent-dark); text-decoration: none; }
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.kicker {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0 0 1.1rem;
+  font-weight: 700;
+}
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.8rem;
+  max-width: 38rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.hero-mail {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- buttons ---------- */
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.button:hover { background: var(--accent-dark); }
+
+/* ---------- sections ---------- */
+
+.section { padding: 3rem 0; }
+
+.section.alt {
+  background: var(--paper-alt);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.section h2 {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  line-height: 1.25;
+  margin: 0 0 1.1rem;
+}
+
+.section p { margin: 0 0 1.1rem; }
+.section p:last-child { margin-bottom: 0; }
+
+.plain {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--rule);
+  padding-left: 1rem;
+}
+
+/* ---------- who we work with ---------- */
+
+.fit-list {
+  margin: 0 0 1.2rem;
+  padding-left: 1.2rem;
+}
+
+.fit-list li { margin-bottom: 0.5rem; }
+
+/* ---------- services grid ---------- */
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 640px) {
+  .svc-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem 2rem; }
+}
+
+.svc h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+
+.svc p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- fees ---------- */
+
+.fee-line {
+  margin: 0.4rem 0 1.2rem;
+  font-size: 1.1rem;
+}
+
+.fee-num {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-right: 0.4rem;
+  line-height: 1;
+}
+
+.founding {
+  margin-top: 2rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 3px;
+  padding: 1.3rem 1.4rem;
+}
+
+.founding h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.founding p { margin: 0; }
+
+/* ---------- faq ---------- */
+
+.faq { margin: 1.4rem 0 0; }
+
+.faq dt {
+  font-weight: 700;
+  margin: 1.3rem 0 0.3rem;
+}
+
+.faq dt:first-child { margin-top: 0; }
+
+.faq dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* ---------- contact ---------- */
+
+.contact { border-top: 1px solid var(--rule); }
+
+.contact-actions { margin-top: 1.5rem; }
+
+/* ---------- footer ---------- */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  background: var(--paper-alt);
+  padding: 2rem 0 2.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.footer p { margin: 0 0 0.4rem; }
